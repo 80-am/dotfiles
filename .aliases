@@ -1,0 +1,4 @@
+# aliases
+
+alias py=python3
+alias ll='colorls -a'
