@@ -1,0 +1,25 @@
+[general]
+base_currency = USD
+#display = percentage
+display = price
+
+[ark]
+icon = 
+
+[bitcoin]
+icon =  
+
+[burst]
+icon = 
+
+[ethereum]
+icon = 
+
+[chainlink]
+icon = 
+
+[omisego]
+icon = 
+
+[shift]
+icon = 
