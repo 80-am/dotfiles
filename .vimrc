@@ -27,7 +27,6 @@ set ruler
 set encoding=utf-8
 set fileencoding=utf-8
 set nu
-set number
 hi LineNr       term=bold cterm=bold ctermfg=2 guifg=Yellow guibg=NONE
 syntax on
 
