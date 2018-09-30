@@ -1,4 +1,7 @@
 # aliases
 
+# global
+alias ll='colorls -a --sd'
 alias py=python3
-alias ll='colorls -a'
+
+# work
