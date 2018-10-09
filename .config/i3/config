@@ -23,9 +23,9 @@ client.focused_inactive     $bg-color       $bg-color       $inactive-text-color
 client.urgent               $bg-color       $bg-color       $text-color          $bg-color  $bg-color
 client.background                           $bg-color
 
-set $mod Mod1
+set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
+# Font for window titles. ill also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:SF Mono Regular 8
 #font pango:Monaco Regular 8 
@@ -66,6 +66,7 @@ bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+Tab focus right
+bindsym $mod+Shift+Tab focus left
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -156,7 +157,7 @@ mode "resize" {
 
         # Pressing left will shrink the window’s width.
         # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
+									 /ressing up will shrink the window’s heig.i'';xx;;x;`
         # Pressing down will grow the window’s height.
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
@@ -186,20 +187,14 @@ bindsym $mod+r mode "resize"
 
 
 # starting polybar
-
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh	
-
-# start message workspace
-
-exec_always i3-msg "workspace 2; append_layout $HOME/.i3/workspace-2.json"
-exec i3-msg "workspace 2; exec npm start --prefix /home/adaber/repos/outlook-for-linux"
 
 # start dunst
 exec killall -q notify-osd
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
 # replace caps lock with escape
-exec setxkbmap -option caps:swapescape
+# exec setxkbmap -option caps:swapescape
 
 # disables window borders
 for_window [class="^.*"] border pixel 3
@@ -207,7 +202,7 @@ new_window pixel 4
 new_float pixel 4
 
 # lock screen (i3lock)
-bindsym mod4+l exec /home/adaber/repos/random/scripts/i3lockblur.sh
+bindsym $mod+p exec /home/adaber/repos/random/scripts/i3lockblur.sh
 
 
 # start compton (transparancy and shit)
@@ -216,15 +211,17 @@ exec_always dbus-launch compton -CG --config ~/.config/compton.conf &
 # force floating for all new windows
 #for_window [class="[.]*"] floating enable
 
+# start these applications in floating mode
+for_window [class="Gnome-calculator"] floating enable
+
 # volume controll
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
 bindsym XF86AudioLowerVolume  exec amixer -q sset Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q sset Master toggle
 
-bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
-bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
-bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
-bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+bindsym $mod+F8 exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym $mod+F9 exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+bindsym $mod+F10 exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
 
 # focus follow mouse
 focus_follows_mouse no 
@@ -237,7 +234,8 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # scan for monitors
-#bindsym $mod+Shift+s exec --no-startup-id /home/adaber/repos/random/scripts/monitor.sh
+bindsym $mod+Shift+s exec autorandr --change
+exec autorandr --change
 
 # load gnome-daemon
 exec gnome-settings-daemon
@@ -296,5 +294,12 @@ exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id gnome-power-manager
 
+# set keyboard to us
+setxkbmap -layout "us,us"
+
+# toggle swedish and us keyboard
+bindsym $mod+Shift+x exec /home/adaber/repos/random/scripts/change-kblayout.sh
+
 # intellij focus bug fix
 for_window [class="^jetbrains-.+"][window_type=dialog] focus
+
