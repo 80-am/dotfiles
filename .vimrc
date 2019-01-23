@@ -14,6 +14,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'Quramy/tsuguyomo'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -23,17 +24,17 @@ set exrc
 set secure "Make sure this can't be abused
 
 " INTERFACE
-set ruler
+set clipboard=unnamedplus
 set encoding=utf-8
 set fileencoding=utf-8
 set nu
+set ruler
 hi LineNr       term=bold cterm=bold ctermfg=2 guifg=Yellow guibg=NONE
 syntax on
 
 colorscheme material
 let g:material_theme_style = 'dark'
 hi Normal guibg=NONE ctermbg=NONE
-
 
 " INDENTING
 set tabstop=4
