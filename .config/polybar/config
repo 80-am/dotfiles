@@ -2,9 +2,9 @@
 ;background = #77000000 
 background = #00000000 
 foreground = #eee
-linecolor = #222
+linecolor = #81a1c1
 bordercolor = #222
-accent = #704769
+accent = #81a1c1
 
 [settings]
 screenchange-reload = true
@@ -25,14 +25,14 @@ margin-bottom = 0
 [bar/top]
 enable-ipc = true
 monitor = DP-1
-height = 30
+height = 36
 ;radius = 6.0
 fixed-center = true
 override-redirect = true
 
 #EXPERIMENT
-width = 96.7%
-offset-x = 1.7%
+width = 96%
+offset-x = 2%
 offset-y = 1%
 
 background = ${colors.background}
@@ -367,8 +367,8 @@ label-mode-padding = 2
 label-mode-background = ${colors.accent}
 
 label-focused = %index%
-label-focused-background = #704769
-label-focused-foreground = ${module/bspwm.label-focused-foreground}
+label-focused-background = ${colors.accent}
+label-focused-foreground = #303030 
 label-focused-overline= ${module/bspwm.label-focused-overline}
 label-focused-underline= ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
