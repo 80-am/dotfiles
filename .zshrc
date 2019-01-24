@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/adam/.oh-my-zsh
+export ZSH=/home/adam/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -95,4 +95,9 @@ setopt autonamedirs
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# PATH
+#
+export PATH=$PATH:/home/adam/.gem/ruby/2.6.0/bin
+
 source $HOME/.aliases

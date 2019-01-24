@@ -3,5 +3,7 @@
 # global
 alias ll='colorls -a --sd'
 alias py=python3
+alias neo='neofetch --ascii /home/adam/Repos/dotfiles/.ascii-cat'
+alias homie='vncviewer 192.168.86.59:0 &'
 
 # work
