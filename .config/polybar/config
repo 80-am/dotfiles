@@ -75,7 +75,7 @@ font-8 = Wuncon Siji:pixelsize=13;4
 modules-left = bspwm i3 
 ;modules-center = mpd
 ;modules-center = xwindow
-modules-right = xwindow date
+modules-right = xkeyboard date
 
 tray-position = right
 tray-padding = 9
@@ -83,7 +83,7 @@ tray-maxsize = 16
 tray-detached = false
 tray-offset-x = 0%
 tray-offset-y = 0%
-tray-background = #77000000 
+tray-background = ${colors.background} 
 
 #wm-restack = bspwm
 wm-restack = i3
@@ -102,7 +102,7 @@ scroll-down = bspwm-desknext
 
 # bar/module specific vars
 bspwm-focused-overline = ${colors.linecolor}
-bspwm-focused-underline = #cc333333
+bspwm-focused-underline = ${colors.background} 
 
 [bar/top2]
 enable-ipc = true
@@ -352,7 +352,8 @@ label-dimmed-underline = ${root.background}
 label-dimmed-active-foreground = #f00
 
 [module/i3]
-format-background = #77000000 
+format-background = ${colors.background} 
+tray-background = 
 type = internal/i3
 index-sort = true
 pin-workspaces = true
@@ -367,14 +368,14 @@ label-mode-padding = 2
 label-mode-background = ${colors.accent}
 
 label-focused = %index%
-label-focused-background = ${colors.accent}
-label-focused-foreground = #303030 
+label-focused-background = ${colors.background} 
+label-focused-foreground = #EFC779 
 label-focused-overline= ${module/bspwm.label-focused-overline}
 label-focused-underline= ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 label-unfocused = %index%
-label-unfocused-background = #77000000
+label-unfocused-background = ${colors.background}  
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
 label-urgent = %index%!
@@ -382,7 +383,7 @@ label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
 label-visible = %index%
-label-visibile-background = #77000000
+label-visibile-background = ${colors.background} 
 label-visible-padding = ${module/bspwm.label-empty-padding}
 
 [module/cpu]
@@ -430,7 +431,7 @@ label-connected = %local_ip%
 ;label-disconnected-foreground = #999
 
 [module/date]
-format-background = #77000000 
+format-background = 
 format-foreground = #EFC779
 format-padding = 2
 type = internal/date
@@ -612,6 +613,8 @@ menu-0-2-exec = pcmanfm
 type = internal/xkeyboard
 
 blacklist-0 = num lock
+format-background =  ${colors.background}
+format-foreground = #EFC779
 
 format-prefix = " "
 format-prefix-foreground = #666
@@ -622,8 +625,8 @@ label-indicator-padding = 2
 label-indicator-background = ${colors.accent}
 
 [module/xwindow]
-format-background = #77000000 
-format-foreground = #D6ADD5
+format-background = ${colors.background}
+format-foreground = #EFC779
 format-padding = 2
 type = internal/xwindow
 format = <label>

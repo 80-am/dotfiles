@@ -6,7 +6,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'rakr/vim_one'
+Plugin 'joshdick/onedark.vim'
 Plugin 'kaicataldo/material.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
@@ -15,6 +15,8 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Quramy/tsuguyomo'
+Plugin 'vobornik/vim-mql4'
+Plugin 'sheerun/vim-polyglot'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -32,7 +34,8 @@ set ruler
 hi LineNr       term=bold cterm=bold ctermfg=2 guifg=Yellow guibg=NONE
 syntax on
 
-colorscheme material
+colorscheme material 
+set background=dark
 let g:material_theme_style = 'dark'
 hi Normal guibg=NONE ctermbg=NONE
 
@@ -45,6 +48,7 @@ set smartindent
 set smarttab
 
 " Airline
+" let g:airline_theme='material'
 let g:airline_theme = 'deus'
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -75,3 +79,14 @@ let g:syntastic_mode_map = {
             \ "mode": "active",
             \ "passive_filetypes": ["asm"] }
 
+if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+if (has("termguicolors"))
+  set termguicolors
+endif
