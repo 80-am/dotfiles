@@ -2,73 +2,48 @@
 
 <script>
   const CONFIG = {
-    // the category, name, key, url, search path and color for your commands
-    // if none of the specified keys are matched, the '*' key is used
     commands: [
-      [null, 'Google', '*', 'https://encrypted.google.com', '/search?q={}', '#111'],
-      ['Work', 'Analytics', 'a', 'https://analytics.google.com', null, '#ff6d00'],
-      ['Work', 'GitHub', 'g', 'https://github.com', '/search?q={}', '#333'],
-      ['Work', 'Inbox', 'I', 'https://inbox.google.com', '/search/{}', '#4285f4'],
-      ['Work', 'Keep', 'k', 'https://keep.google.com', '/#search/text={}', '#fb0'],
-      ['Look', 'Codrops', 'C', 'https://tympanus.net/codrops', '?search-type=posts&s={}', '#0099cc'],
-      ['Look', 'Hunt', 'H', 'https://www.producthunt.com', '/search?q={}', '#da552f'],
-      ['Look', 'Photos', 'P', 'https://photos.google.com', '/search/{}', '#34a853'],
-      ['Look', 'Unsplash', 'u', 'https://unsplash.com/new', '/search/{}', '#000'],
-      ['Lurk', 'Facebook', 'f', 'https://www.facebook.com', '/search/top/?q={}', '#3b5998'],
-      ['Lurk', 'Instagram', 'i', 'https://www.instagram.com', null, '#833ab4'],
-      ['Lurk', 'Reddit', 'r', 'https://www.reddit.com', '/search?q={}', '#5f99cf'],
-      ['Lurk', 'Twitter', 't', 'https://twitter.com', '/search?q={}', '#1da1f2'],
-      ['Listen', 'Hypem', 'h', 'https://hypem.com/popular', '/search/{}', '#83c441'],
-      ['Listen', 'Line Radio', 'l', 'https://linerad.io', '/#{}', '#39CCCC'],
-      ['Listen', 'Pandora', 'p', 'https://www.pandora.com', '/artist/{}', '#005483'],
-      ['Listen', 'SoundCloud', 's', 'https://soundcloud.com/discover', '/search?q={}', '#ff8800'],
-      ['Watch', 'Academy', 'A', 'https://www.khanacademy.org/', '/search?page_search_query={}', '#9cb443'],
-      ['Watch', 'Netflix', 'n', 'https://www.netflix.com/browse', '/search?q={}', '#e50914'],
-      ['Watch', 'Twitch', 'T', 'https://www.twitch.tv/directory/following', null, '#6441a5'],
-      ['Watch', 'YouTube', 'y', 'https://youtube.com/feed/subscriptions', '/results?search_query={}', '#cd201f'],
-      ['Download', '7digital', '7', 'https://us.7digital.com', '/search?q={}', '#07606e'],
-      ['Download', 'Sky Torrents', 'S', 'https://skytorrents.in', '/search/all/ed/1?q={}', '#00d1b2'],
-      ['Download', 'Pirate Bay', 'b', 'https://thepiratebay.org', '/search/{}', '#4c4132'],
-      ['Download', 'YTS', 'Y', 'https://yts.gs/browse-movies/all/1080p/all/7/latest', '/browse-movies/{}', '#2f2f2f'],
+      [null, 'Google', '*', 'https://encrypted.google.com', '/search?q={}', '#2F343F'],
+      ['dev', 'CodePen', 'c', 'https://codepen.io', '/search/pens?q={}&limit=all&type=type-pens', '#A3A3A3'],
+      ['dev', 'Coolors', 'C', 'https://coolors.co/browser/picks/1', null, '#00A896'],
+      ['dev', 'GitHub', 'g', 'https://github.com', '/search?q={}', '#333'],
+      ['dev', 'Stack Overflow', 's', 'https://stackoverflow.com', '/search?q={}', '#FFA500'],
+      ['life', 'bet365', 'b', 'https://www.bet365.com/?lng=8&cb=10326427196#/HO/', null, '#14805E'],
+      ['life', 'Dropbox', 'd', 'https://www.dropbox.com/home', null, '#007EE5'],
+      ['lurk', '4chan', '4', 'http://www.4chan.org/', null, '#FFCCAA'],
+      ['lurk', 'Reddit', 'r', 'https://www.reddit.com', '/search?q={}', '#5f99cf'],
+      ['lurk', 'Twitter', 't', 'https://twitter.com', '/search?q={}', '#1da1f2'],
+      ['misc', 'Pirate Bay', 'p', 'https://thepiratebay.org', '/search/{}', '#8E6343'],
+      ['misc', 'RAR BG', 'R', 'https://rarbg.to', '/torrents.php?search={}&category%5B%5D=44', '#2f2f2f'],
+      ['misc', 'Twitch', 'T', 'https://www.twitch.tv/directory', null, '#6441a5'],
+      ['news', 'Dagens Nyheter', 'D', 'http://www.dn.se', '/sok/?q={}&page=1&sort=newest&date=', '#91010A'],
+      ['news', 'ESPN', 'e', 'https://www.espn.com', '/search/results?q={}', '#CC0000'],
+      ['news', 'OMNI', 'o', 'http://omni.se', '/sok?q={}&tab=', '#0099cc'],
+      ['news', 'Sydsvenskan', 'S', 'https://www.sydsvenskan.se', '/sok?q={}', '#F14055'],
+      ['watch', 'Netflix', 'n', 'https://www.netflix.com/browse', '/search?q={}', '#e50914'],
+      ['watch', 'Plex', 'P', 'http://app.plex.tv/web/app#', null, '#E29400'],
+      ['watch', 'YouTube', 'y', 'https://youtube.com/feed/subscriptions', '/results?search_query={}', '#cd201f'],
+      ['watch', 'ViaPlay', 'v', 'https://viaplay.se', '/#search={}', '#EE302F'],
     ],
-    // give suggestions as you type
     suggestions: true,
-    // max amount of suggestions that will ever be displayed
     suggestionsLimit: 5,
-    // the order and limit for each suggestion influencer
-    // "Default" suggestions come from CONFIG.defaultSuggestions
-    // "DuckDuckGo" suggestions come from the duck duck go search api
-    // "History" suggestions come from your previously entered queries
     influencers: [
       { name: 'Default', limit: 5 },
       { name: 'History', limit: 2 },
       { name: 'DuckDuckGo', limit: 5 },
     ],
-    // default search suggestions for the specified queries
     defaultSuggestions: {
       'g': ['g/issues', 'g/pulls', 'gist.github.com', 'g/cadejscroggins', 'g/cadejscroggins/tilde'],
       'l': ['l:electronic', 'l:chill', 'l:focus', 'l:sleep', 'l:ambient'],
       'r': ['r/r/unixporn', 'r/r/startpages', 'r/r/webdev', 'r/r/technology', 'r/r/portland'],
       's': ['s/you/likes', 's/discover/the-upload'],
     },
-    // instantly redirect when a key is matched
-    // put a space before any other queries to prevent unwanted redirects
     instantRedirect: false,
-    // open queries in a new tab
     newTab: true,
-    // dynamic background colors when command domains are matched
     colors: true,
-    // the delimiter between the key and your search query
-    // e.g. to search GitHub for potatoes you'd type "g:potatoes"
     searchDelimiter: ':',
-    // the delimiter between the key and a path
-    // e.g. type "r/r/unixporn" to go to "reddit.com/r/unixporn"
     pathDelimiter: '/',
-    // the delimiter between the hours and minutes in the clock
     clockDelimiter: '&nbsp;',
-    // note: you can pass in your search query via the q query param
-    // e.g. going to file:///path/to/tilde/index.html?q=hamsters is equivalent
-    // to typing "hamsters" and pressing enter
   };
 </script>
 
@@ -77,7 +52,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 
-<title>~</title>
+<title>🗿</title>
 
 <style type="text/css">
   @import url('https://fonts.googleapis.com/css?family=Lato:400,900');
@@ -91,7 +66,8 @@
     padding: 0;
     transition: background .2s;
     font-family: Lato, sans-serif;
-    color: #222;
+    color: #eee;
+    background-color: #2f3331;
   }
   input,
   button,

@@ -1,9 +1,11 @@
 # aliases
 
 # global
-alias ll='colorls -a --sd'
+alias ll='colorls -la'
 alias py=python3
 alias neo='neofetch --ascii /home/adam/Repos/dotfiles/.ascii-cat'
 alias open='xdg-open'
+alias lf='npm run lint:fix'
+alias docker-rmi='sudo docker rmi -f $(sudo docker images -a -q)'
+alias fh='sh ~/repos/dotfiles/scripts/find-here.sh'
 
-# work
