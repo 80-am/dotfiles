@@ -1,14 +1,18 @@
-# aliases
-
 # global
+alias cheats='cat $HOME/repos/dotfiles/cheatsheet'
 alias docker-rmi='sudo docker rmi -f $(sudo docker images -a -q)'
 alias fh='sh $HOME/repos/dotfiles/scripts/find-here.sh'
 alias grun='go run .'
+alias hg='history | grep'
 alias lf='npm run lint:fix'
 alias neo='neofetch --ascii $HOME/repos/dotfiles/.ascii-cat'
 alias open='xdg-open'
+alias please='sudo $(fc -ln -1)'
 alias py='python3'
 alias stash-save='git stash save -u'
+alias untar='tar -zxvf'
+alias vim='nvim'
+alias wget='wget -c'
 alias :q='exit'
 
 #mac
