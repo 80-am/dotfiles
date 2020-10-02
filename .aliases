@@ -1,11 +1,18 @@
 # aliases
 
 # global
-alias ll='colorls -la'
+alias ll='lsd -lha'
 alias py=python3
 alias neo='neofetch --ascii /home/adam/Repos/dotfiles/.ascii-cat'
 alias open='xdg-open'
 alias lf='npm run lint:fix'
 alias docker-rmi='sudo docker rmi -f $(sudo docker images -a -q)'
 alias fh='sh ~/repos/dotfiles/scripts/find-here.sh'
+alias stash-save='git stash save -u'
+alias :q='exit'
 
+#mac
+alias bs='brew services'
+alias restart-dns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
+alias java8='sdk use java 8.0.252.hs-adpt'
+alias java11='sdk use java 11.0.7.hs-adpt'
