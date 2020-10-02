@@ -31,13 +31,13 @@ set encoding=utf-8
 set fileencoding=utf-8
 set nu
 set ruler
-hi LineNr       term=bold cterm=bold ctermfg=2 guifg=Yellow guibg=NONE
 syntax on
 
 colorscheme material 
 set background=dark
 let g:material_theme_style = 'dark'
 hi Normal guibg=NONE ctermbg=NONE
+hi LineNr term=bold cterm=bold ctermfg=2 guifg=Yellow guibg=NONE
 
 " INDENTING
 set tabstop=4
