@@ -3,11 +3,11 @@
 # global
 alias ll='lsd -lha'
 alias py=python3
-alias neo='neofetch --ascii /home/adam/Repos/dotfiles/.ascii-cat'
+alias neo='neofetch --ascii $HOME/repos/dotfiles/.ascii-cat'
 alias open='xdg-open'
 alias lf='npm run lint:fix'
 alias docker-rmi='sudo docker rmi -f $(sudo docker images -a -q)'
-alias fh='sh ~/repos/dotfiles/scripts/find-here.sh'
+alias fh='sh $HOME/repos/dotfiles/scripts/find-here.sh'
 alias stash-save='git stash save -u'
 alias :q='exit'
 
