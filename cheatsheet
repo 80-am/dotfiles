@@ -2,5 +2,6 @@ cal -m | cli calendar
 df -h | show filesystem
 
 vim:
+insert multiline | visual, select, shift+i
 search and replace | :%s/search/replace/g
 ^ in range | :4,15 s/search/replace/g
