@@ -1,5 +1,6 @@
 cal -m | cli calendar
 df -h | show filesystem
+fh "word" | in files recursively from cwd
 
 vim:
 insert multiline | visual, select, shift+i

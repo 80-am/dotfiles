@@ -17,14 +17,12 @@ source $ZSH/oh-my-zsh.sh
 setopt autonamedirs
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!
-export SDKMAN_DIR="/Users/adaber/.sdkman"
-[[ -s "/Users/adaber/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/adaber/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export PATH="/usr/local/opt/bison/bin:$PATH"
 
 source $HOME/.aliases
 if [[ -a $HOME/.aliases_spec ]]; then
 	source $HOME/.aliases_spec
 fi
-

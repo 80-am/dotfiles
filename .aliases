@@ -1,7 +1,7 @@
 # global
 alias cheats='cat $HOME/repos/dotfiles/cheatsheet'
 alias docker-rmi='sudo docker rmi -f $(sudo docker images -a -q)'
-alias fh='sh $HOME/repos/dotfiles/scripts/find-here.sh'
+alias fh='grep -rnw './/' -e '
 alias grun='go run .'
 alias hg='history | grep'
 alias lf='npm run lint:fix'
