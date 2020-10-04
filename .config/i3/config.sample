@@ -15,7 +15,8 @@ client.focused_inactive     $bg-color       $bg-color       $inactive-text-color
 client.urgent               $bg-color       $bg-color       $text-color          $bg-color  $bg-color
 client.background                           $bg-color
 
-set $mod Mod4
+# mod key Mod1 for alt, Mod4 for super
+set $mod Mod1
 
 # Font for window titles. ill also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -205,15 +206,6 @@ bindsym $mod+Shift+x exec $HOME/repos/scripts/change-kblayout.sh
 exec killall -q 
 exec --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
 
-# scale to 4k
-exec xrandr --dpi 220
-
-# Nvidia stuff
-exec bash -c 'nvidia-settings --assign CurrentMetaMode="nvidia-auto-select+0+0 {ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}"'
-
-# pulse starting to late, quick fix
-exec bash -c 'killall pulseaudio'
-
 # volume controll
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
 bindsym XF86AudioLowerVolume  exec amixer -D pulse sset Master 5%-
@@ -223,12 +215,6 @@ bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
 bindsym Shift+XF86AudioRaiseVolume exec python $HOME/repos/scripts/hue-controll.py 20
 bindsym Shift+XF86AudioLowerVolume exec python $HOME/repos/scripts/hue-controll.py -20
 bindsym Shift+XF86AudioMute exec python $HOME/repos/scripts/hue-controll.py toggle
-
-# start hue desktop lamp on startup
-exec --no-startup-id py $HOME/repos/scripts/hue-controll.py on
-
-# set default audio device
-exec pactl set-default-sink alsa_output.usb-Audio-Technica_ATR_USB_microphone-00.iec958-stereo
 
 # floating applications
 for_window [instance="vncviewer"] floating enable

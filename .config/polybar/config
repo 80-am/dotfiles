@@ -12,28 +12,22 @@ screenchange-reload = true
 margin-top = 0
 margin-bottom = 0
 
-[bar/top]
+[bar/external]
 enable-ipc = true
 monitor = DP-0
 height = 36
-;radius = 6.0
 fixed-center = true
 override-redirect = true
-
-#EXPERIMENT
 width = 96%
 offset-x = 2%
 offset-y = 1%
-
 background = ${colors.background}
 foreground = ${colors.foreground}
 line-color = ${colors.linecolor}
 underline-size = 0
 overline-size = 0
-
 border-bottom-size = 0
 border-bottom-color = ${colors.bordercolor}
-
 font-0 = SF Mono Regular:pixelsize=18;1
 font-1 = unifont:size=6;1
 font-2 = cryptocoins:style=Regular;0:size=9;
@@ -43,27 +37,60 @@ font-5 = FontAwesome5Free:style=Solid:pixelsize=14;4
 font-6 = FontAwesome5Brands:style=Solid:pixelsize=14;4
 font-7 = MaterialIcons:pixelsize=13;4
 font-8 = Wuncon Siji:pixelsize=13;4
-
-modules-left = i3 
-;modules-center = xwindow
+modules-left = i3
 modules-right = xkeyboard date
-
 tray-position = right
 tray-padding = 9
 tray-maxsize = 16
 tray-detached = false
 tray-offset-x = 0%
 tray-offset-y = 0%
-tray-background = ${colors.background} 
-
+tray-background = ${colors.background}
 wm-restack = i3
 scroll-up = bspwm-deskprev
 scroll-down = bspwm-desknext
-
-# bar/module specific vars
 bspwm-focused-overline = ${colors.linecolor}
-bspwm-focused-underline = ${colors.background} 
+bspwm-focused-underline = ${colors.background}
 
+[bar/laptop]
+enable-ipc = true
+monitor = eDP-1
+height = 36
+fixed-center = true
+override-redirect = true
+width = 96%
+offset-x = 2%
+offset-y = 1%
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-color = ${colors.linecolor}
+underline-size = 0
+overline-size = 0
+border-bottom-size = 0
+border-bottom-color = ${colors.bordercolor}
+font-0 = SF Mono Regular:pixelsize=13;1
+font-1 = unifont:size=6;1
+font-2 = cryptocoins:style=Regular;0:size=9;
+font-3 = octicons:pixelsize=14;3
+font-4 = Weather Icons:size=14;4
+font-5 = FontAwesome5Free:style=Solid:pixelsize=14;4
+font-6 = FontAwesome5Brands:style=Solid:pixelsize=14;4
+font-7 = MaterialIcons:pixelsize=13;4
+font-8 = Wuncon Siji:pixelsize=13;4
+modules-left = i3
+modules-right = xkeyboard battery date
+tray-position = right
+tray-padding = 9
+tray-maxsize = 16
+tray-detached = false
+tray-offset-x = 0%
+tray-offset-y = 0%
+tray-background = ${colors.background}
+wm-restack = i3
+scroll-up = bspwm-deskprev
+scroll-down = bspwm-desknext
+bspwm-focused-overline = ${colors.linecolor}
+bspwm-focused-underline = ${colors.background}
 
 [module/crypto]
 type = custom/script
@@ -232,7 +259,7 @@ font = font-3
 label =  
 
 [module/battery]
-format-background = #77000000 
+format-background =
 format-padding = 2
 type = internal/battery
 full-at = 97
@@ -241,11 +268,11 @@ full-at = 97
 exec = "count=$(acpi -b | wc -l); sum=$(acpi -b | egrep -o '[0-9]{1,3}%' | tr -d '%' | xargs -I% echo -n '+%'); echo Avg capacity: $(( sum / count ))%" 
 format-charging = <animation-charging> <label-charging>
 label-charging =  %percentage%%
-format-charging-background = #77000000 
+format-charging-background =
 format-charging-foreground = #A7D2AA
 format-discharging = <ramp-capacity> <label-discharging>
 label-discharging =  %percentage%%
-format-discharging-background = #77000000 
+format-discharging-background =
 format-discharging-foreground = #D98E8D
 format-full-background = #77000000 
 format-full-foreground = #A7D2AA
@@ -362,7 +389,7 @@ format-background = #77000000
 format-foreground = #A9D3AB 
 format-padding = 2
 type = custom/script
-exec = ~/repos/random/scripts/spotify-polybar.sh
+exec = $HOME/repos/random/scripts/spotify-polybar.sh
 tail = true
 interval = 2
 
