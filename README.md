@@ -2,7 +2,7 @@
 
 <a href="./assets/linux.png"><img alt="Linux" src="./assets/linux.png" width="600"></a>
 
-[colorls](#colorls) | [compton](#compton) | [dunst](#dunst) | [i3-gaps](#i3-gaps) | [nvim](#nvim) | [polybar](#polybar) | [rofi](#rofi) | [yabai](#yabai) | [zsh](#zsh)
+[colorls](#colorls) | [compton](#compton) | [dunst](#dunst) | [i3-gaps](#i3-gaps) | [nvim](#nvim) | [pecan](#pecan) | [polybar](#polybar) | [rofi](#rofi) | [yabai](#yabai) | [zsh](#zsh)
 
 ## Installation
 
@@ -49,6 +49,19 @@ Uses Vundle to handle plugins such as nerdtree and vim-airline.
 ln -s .vimrc $HOME/.vimrc
 ln -s .vim $HOME/.vim
 ln -s .config/nvim $HOME/.config/nvim
+```
+
+### [pecan](https://github.com/zzzeyez/pecan)
+Customizable bar for [Übersicht macOS](https://github.com/felixhageloh/uebersicht).
+<br><img alt="pecan" src="./assets/pecan.png" width="800">
+
+```bash
+ln -s .config/pecan/scripts $PECAN_DIR/scripts
+ln -s ./config/background.jsx $PECAN_DIR/background.jsx
+ln -s ./config/battery.jsx $PECAN_DIR/battery.jsx
+ln -s ./config/clock.jsx $PECAN_DIR/clock.jsx
+ln -s ./config/lang.jsx $PECAN_DIR/lang.jsx
+ln -s ./config/style.css $PECAN_DIR/style.css
 ```
 
 ### [polybar](https://github.com/polybar/polybar)
