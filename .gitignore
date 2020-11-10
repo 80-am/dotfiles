@@ -1,1 +1,3 @@
+*__pycache__
 .config/i3/config
+scripts/config.py

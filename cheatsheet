@@ -1,7 +1,14 @@
 cli calendar | cal
+ignore files local git | git update-index --skip-worktree <file-list>
 in files recursively from cwd | fh "word"
 recover deleted file | testdisk /dev/mounteddisk/
 show filesystem storage | df -h
+
+sql:
+show size | `SELECT table_schema "DB Name",
+				ROUND(SUM(data_length + index_length) / 1024 / 1024, 1) "DB Size in MB"
+			 FROM information_schema.tables
+			 GROUP BY table_schema;`
 
 vim:
 delete innertags | di'
