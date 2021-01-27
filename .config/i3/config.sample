@@ -220,3 +220,7 @@ bindsym Shift+XF86AudioMute exec python $HOME/repos/scripts/hue-controll.py togg
 for_window [instance="vncviewer"] floating enable
 for_window [class="calculator"] floating enable
 for_window [window_role="pop-up"] floating enable
+
+# screenshot
+bindsym --release Shift+Ctrl+4 exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
+
