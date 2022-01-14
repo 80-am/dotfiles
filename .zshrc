@@ -1,8 +1,6 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/sbin
 export GOPATH=$HOME/go
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home
-#export WILDFLY_HOME=/usr/local/Cellar/wildfly@9.0.2/9.0.2.Final/libexec/
 export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="spaceship"
