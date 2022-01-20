@@ -1,6 +1,7 @@
 # global
 alias cheats='cat $HOME/repos/dotfiles/cheatsheet'
 alias clip='xclip -sel clip'
+alias dcu='docker-compose pull && docker-compose up -d'
 alias docker-rmi='sudo docker rmi -f $(sudo docker images -a -q)'
 alias ducks='du -cks * | sort -rn | head'
 alias fh='grep -rnw './/' -e '
