@@ -14,7 +14,7 @@ margin-bottom = 0
 
 [bar/external]
 enable-ipc = true
-monitor = DP-0
+monitor = DP-2
 height = 36
 fixed-center = true
 override-redirect = true

@@ -10,6 +10,6 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 if xrandr | grep -q "eDP-1 connected"; then
 	polybar laptop &
 fi
-if xrandr | grep -q "DP-0 connected"; then
+if xrandr | grep -q "DP-2 connected"; then
 	polybar external &
 fi
