@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# $1 = 'docker-compose root'
-
 for d in $1*/; do
-	docker-compose -f $d/docker-compose.yml up --force-recreate --build -d --remove-orphans
+	cd $d && docker-compose down && docker-compose pull && docker-compose up -d
 done
