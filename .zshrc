@@ -24,3 +24,7 @@ source $HOME/.aliases
 if [[ -a $HOME/.aliases_spec ]]; then
 	source $HOME/.aliases_spec
 fi
+
+# Created by `pipx` on 2025-05-27 07:37:32
+export HOMEBREW_NO_ENV_HINTS=1
+export PATH="$PATH:/Users/adam/.local/bin"
