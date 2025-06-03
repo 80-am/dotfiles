@@ -1,0 +1,21 @@
+icons:
+  when: always
+  theme: fancy
+
+blocks:
+  - permission
+  - user
+  - size
+  - name
+
+date: relative
+
+sorting:
+  column: name
+  reverse: false
+
+layout: grid
+
+# Add this line to use colors.yaml instead of old theme names
+color:
+  when: auto
